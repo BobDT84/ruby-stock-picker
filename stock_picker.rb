@@ -3,10 +3,10 @@ def stock_picker(prices)
     best_profit = 0
     prices.each_with_index do |price, index|
         if index < (prices.length - 1) 
-            max = prices.slice((index+1)..-1).max #max of array of prices after current index
-            if max-price > best_profit
+            max = prices.slice((index + 1)..-1).max #max of array of prices after current index
+            if max - price > best_profit
                 best_profit = max - price
-                buy_sell = [index,prices.index(max)]
+                buy_sell = [index, prices.index(max)]
             end
         end
     end
